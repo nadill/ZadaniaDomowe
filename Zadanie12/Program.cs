@@ -10,6 +10,10 @@ namespace Zadanie12
     {
         static void Main(string[] args)
         {
+            TSVParser parser = new TSVParser();
+
+            Console.ReadKey();
+
         }
     }
 }
