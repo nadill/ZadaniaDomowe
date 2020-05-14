@@ -37,7 +37,11 @@ namespace Zadanie13
                         break;
 
                     case "/":
-                        tbWindow.Text = (number1 / number2).ToString();
+                        if (number2 == 0) {
+                            MessageBox.Show("Nie dzielimy przez 0");
+                        } else {
+                            tbWindow.Text = (number1 / number2).ToString();
+                        }
                         break;
                   
                 }
@@ -60,11 +64,11 @@ namespace Zadanie13
         private void btnDigit_Click(object sender, EventArgs e)
         {
             Button key = (Button)sender;
-            if (key.Tag == "." && tbWindow.Text.Contains(","))
+            if ((string)key.Tag == "." && tbWindow.Text.Contains(","))
             {
 
             }
-            else if (tbWindow.Text.Equals("0") && key.Tag == ".")
+            else if (tbWindow.Text.Equals("0") && (string)key.Tag == ".")
             {
                 tbWindow.Text = "0,";
             } else
